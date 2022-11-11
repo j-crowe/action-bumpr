@@ -111,7 +111,7 @@ if [ -z "${BUMP_LEVEL}" ]; then
   exit
 fi
 echo "Bump ${BUMP_LEVEL} version"
-
+git fetch --tags -f
 # check the repository is shallowed.
 # comes from https://stackoverflow.com/questions/37531605/how-to-test-if-git-repository-is-shallow
 if "$(git rev-parse --is-shallow-repository)"; then
