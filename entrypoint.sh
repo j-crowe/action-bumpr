@@ -50,7 +50,7 @@ post_pre_status() {
   if [ -n "${CURRENT_VERSION}" ]; then
     compare="**Changes**:[${CURRENT_VERSION}...${head_label}](${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/compare/${CURRENT_VERSION}...${head_label})"
   fi
-  post_txt="🏷️ [[bumpr]](https://github.com/haya14busa/action-bumpr)
+  post_txt="🏷️ [[bumpr]](https://github.com/j-crowe/action-bumpr)
 **Next version**:${NEXT_VERSION}
 ${compare}"
   FROM_FORK=$(jq -r '.pull_request.head.repo.fork' < "${GITHUB_EVENT_PATH}")
@@ -66,7 +66,7 @@ post_post_status() {
   if [ -n "${CURRENT_VERSION}" ]; then
     compare="**Changes**:[${CURRENT_VERSION}...${NEXT_VERSION}](${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/compare/${CURRENT_VERSION}...${NEXT_VERSION})"
   fi
-  post_txt="🚀 [[bumpr]](https://github.com/haya14busa/action-bumpr) [Bumped!](${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID})
+  post_txt="🚀 [[bumpr]](https://github.com/j-crowe/action-bumpr) [Bumped!](${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID})
 **New version**:[${NEXT_VERSION}](${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/releases/tag/${NEXT_VERSION})
 ${compare}
 "
